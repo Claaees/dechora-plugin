@@ -644,28 +644,12 @@
     sidePanelEl.id = "dechora-sidepanel";
     sidePanelEl.className = "dechora-sidepanel";
 
-    const header = document.createElement("div");
-    header.className = "dechora-sidepanel-header";
-    header.textContent = "Dechora";
-
-    const closeBtn = document.createElement("button");
-    closeBtn.className = "dechora-sidepanel-close";
-    closeBtn.textContent = "×";
-    closeBtn.title = "Close Dechora panel";
-    closeBtn.addEventListener("click", () => {
-      sidePanelEl.classList.remove("dechora-open");
-      // optional: also clear armed state
-      setArmed(false);
-    });
-    header.appendChild(closeBtn);
-
     const iframe = document.createElement("iframe");
     iframe.className = "dechora-sidepanel-iframe";
     iframe.src = PANEL_IFRAME_URL;
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("loading", "lazy");
 
-    sidePanelEl.appendChild(header);
     sidePanelEl.appendChild(iframe);
     document.body.appendChild(sidePanelEl);
 
@@ -802,30 +786,6 @@
 
       .dechora-sidepanel.dechora-open {
         transform: translateX(0);
-      }
-
-      .dechora-sidepanel-header {
-        padding: 10px 12px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .dechora-sidepanel-close {
-        background: transparent;
-        color: #ffffff;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        padding: 0 4px;
-      }
-
-      .dechora-sidepanel-close:hover {
-        color: #ff6666;
       }
 
       .dechora-sidepanel-iframe {
