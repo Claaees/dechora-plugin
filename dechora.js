@@ -515,6 +515,7 @@
 
   async function handleImageSelection(img) {
     try {
+      ensureSidePanelOpen();
       const item = await buildItemForImage(img);
       if (!item) return;
       outputItem(item);
@@ -657,6 +658,15 @@
     setTimeout(() => {
       sidePanelEl.classList.add("dechora-open");
     }, 10);
+  }
+
+  function ensureSidePanelOpen() {
+    if (!document.body) return;
+    if (!sidePanelEl) {
+      createSidePanel();
+      return;
+    }
+    sidePanelEl.classList.add("dechora-open");
   }
 
   // ================================================================
