@@ -29,8 +29,8 @@
 
   const MIN_IMAGE_WIDTH = 100;
   const MIN_IMAGE_HEIGHT = 100;
-  const MAX_IMAGE_WIDTH = 1200;
-  const MAX_IMAGE_HEIGHT = 1200;
+  const MAX_IMAGE_WIDTH = 1000;
+  const MAX_IMAGE_HEIGHT = 1000;
 
   // Where the item ends up – customize this to talk to your app
   function outputItem(item) {
