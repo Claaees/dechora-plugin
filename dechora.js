@@ -29,6 +29,8 @@
 
   const MIN_IMAGE_WIDTH = 100;
   const MIN_IMAGE_HEIGHT = 100;
+  const MAX_IMAGE_WIDTH = 1200;
+  const MAX_IMAGE_HEIGHT = 1200;
 
   // Where the item ends up – customize this to talk to your app
   function outputItem(item) {
@@ -124,6 +126,7 @@
     const rect = img.getBoundingClientRect();
     if (!rect.width || !rect.height) return false;
     if (rect.width < MIN_IMAGE_WIDTH || rect.height < MIN_IMAGE_HEIGHT) return false;
+    if (rect.width > MAX_IMAGE_WIDTH || rect.height > MAX_IMAGE_HEIGHT) return false;
 
     const style = window.getComputedStyle(img);
     if (
